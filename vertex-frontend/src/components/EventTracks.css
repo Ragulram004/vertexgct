@@ -1,0 +1,114 @@
+/* ============================================
+   Event Tracks Section Styles
+   ============================================ */
+
+.event-tracks {
+  background: var(--color-bg-secondary);
+}
+
+.event-tracks__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Track Card */
+.track-card {
+  position: relative;
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.track-card__glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+  pointer-events: none;
+}
+
+.track-card:hover .track-card__glow {
+  opacity: 1;
+}
+
+.track-card__icon-wrap {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  border: 1px solid;
+  transition: transform var(--transition-base);
+}
+
+.track-card:hover .track-card__icon-wrap {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.track-card__icon {
+  font-size: var(--text-2xl);
+}
+
+.track-card__title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-heading);
+}
+
+.track-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.track-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.track-card__count {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.track-card__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: gap var(--transition-base);
+}
+
+.track-card__link:hover {
+  gap: var(--space-2);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .event-tracks__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .event-tracks__grid {
+    grid-template-columns: 1fr;
+  }
+}

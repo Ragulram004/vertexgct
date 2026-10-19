@@ -1,0 +1,118 @@
+/* ============================================
+   About Section Styles
+   ============================================ */
+
+.about__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about__content {
+  text-align: left;
+}
+
+.about__title {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.about__text {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-4);
+}
+
+.about__text strong {
+  color: var(--color-text-heading);
+}
+
+/* Right Column — Cards Grid */
+.about__cards-column {
+  width: 100%;
+}
+
+.about__highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+.about__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.about__card:hover {
+  border-color: var(--color-accent-primary);
+  background: var(--color-bg-card-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.15);
+}
+
+.about__card-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.about__card:hover .about__card-icon-wrapper {
+  background: var(--color-accent-primary);
+  color: #000;
+  border-color: var(--color-accent-primary);
+}
+
+.about__card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.about__card-label {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text-heading);
+  margin: 0;
+}
+
+.about__card-desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 992px) {
+  .about__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 576px) {
+  .about__highlights-grid {
+    grid-template-columns: 1fr;
+  }
+}

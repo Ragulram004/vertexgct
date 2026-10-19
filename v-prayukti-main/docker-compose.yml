@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: prayukti_laravel
+    ports:
+      - "3500:3500"
+    volumes:
+      - .:/var/www/html
+      - ./storage:/var/www/html/storage  # Mount storage folder to your system
+    networks:
+      - prayukti_network
+    environment:
+      - PHP_FPM_MAX_CHILDREN=5
+
+networks:
+  prayukti_network:
+    driver: bridge
